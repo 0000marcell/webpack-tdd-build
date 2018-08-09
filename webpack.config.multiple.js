@@ -3,29 +3,26 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   mode: 'development',
   entry: {
-    pageOne: './src/page-one.js',
-    pageTwo: './src/page-two.js'
+    pageOne: './src/page-one/page-one.js',
+    pageTwo: './src/page-two/page-two.js'
   },
   output: {
-    filename: 'index.js'
+    filename: '[name].js'
   },
   module: {
     rules: [
-      { test: /\.js$/, use: 'babel-loader' },
-      { 
-        test: /\.css$/, 
-        use: ['style-loader', 'css-loader']
-      }
+      { test: /\.js$/, use: 'babel-loader' }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: './src/index.html'
+      filename: 'page-one.html',
+      template: './src/page-one/page-one.html',
+      chunks: ['pageOne']
     }),
     new HtmlWebpackPlugin({
-      filename: 'test.html',
-      template: './src/test.html'
+      filename: 'page-two.html',
+      template: './src/page-two/page-two.html'
     })
   ]
 }
