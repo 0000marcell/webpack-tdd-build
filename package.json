@@ -5,6 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server",
+    "jsonserver": "json-server --watch db.json",
     "build": "webpack",
     "test": "jest ./__test__/sum.test.js"
   },

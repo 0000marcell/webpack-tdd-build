@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Input from "./Input";
 
-const styles = {
-  color: '#ff00ff'
-}
-
 class FormContainer extends Component {
   constructor() {
     super();
@@ -20,9 +16,9 @@ class FormContainer extends Component {
   render() {
     const { seo_title } = this.state;
     return (
-      <form style={styles} id="article-form">
+      <form class="bg-silver" id="article-form">
         <Input
-          text="SEO"
+          text="SEO2"
           label="seo_title"
           type="text"
           id="seo_title"
